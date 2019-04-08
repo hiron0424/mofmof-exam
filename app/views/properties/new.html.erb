@@ -1,0 +1,31 @@
+<h1><%= t(".sign_up") %></h1>
+
+<h2><%= t(".property") %><%= t(".sign_up") %></h2>
+<%= form_for(@property) do |f| %>
+  <div class="form">
+    <p><%= f.label :name %></p>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="form">
+    <%= f.label :rent %>
+    <%= f.text_field :rent %>
+  </div>
+
+  <div class="form">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="form">
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+  </div>
+
+  <div class="form">
+    <%= f.label :notes %>
+    <%= f.text_field :notes %>
+  </div>
+
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,30 @@
+<%= form_for(@property) do |f| %>
+  <div class="form">
+    <p><%= f.label :name %></p>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="form">
+    <%= f.label :rent %>
+    <%= f.text_field :rent %>
+  </div>
+
+  <div class="form">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="form">
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+  </div>
+
+  <div class="form">
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+  </div>
+
+  <%= f.submit %>
+<% end %>
+
+<%= link_to '戻る', properties_path %>

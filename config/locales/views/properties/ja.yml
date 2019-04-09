@@ -3,4 +3,5 @@ ja:
     new:
       sign_up: 登録
       property: 物件
+      name: 物件名
     form:

@@ -3,6 +3,7 @@ class PropertiesController < ApplicationController
 
   def new
     @property = Property.new
+    @property.stations.build
   end
 
   def create
@@ -10,7 +11,7 @@ class PropertiesController < ApplicationController
     if @property.save
       redirect_to properties_path
     else
-      render :new
+      redirect_to new_property_path
     end
   end
 
@@ -22,7 +23,7 @@ class PropertiesController < ApplicationController
   end
 
   def update
-    if @property.update(property_params)
+    if @property.update(update_property_params)
       redirect_to properties_path
     else
       render :edit
@@ -40,7 +41,11 @@ class PropertiesController < ApplicationController
   private
 
   def property_params
-    params.require(:property).permit(:name, :rent, :address, :age, :notes)
+    params.require(:property).permit(:name, :rent, :address, :age, :notes, stations_attributes: %i(line_name station_name walk_minutes))
+  end
+
+  def update_property_params
+    params.require(:property).permit(:name, :rent, :address, :age, :notes, stations_attributes: [:line_name, :station_name, :walk_minutes, :_destroy, :id])
   end
 
   def set_property

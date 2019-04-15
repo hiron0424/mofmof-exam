@@ -17,3 +17,7 @@
 .form p {
   margin: 0;
 }
+
+.last_form {
+  border-bottom: 1px solid gray;
+}

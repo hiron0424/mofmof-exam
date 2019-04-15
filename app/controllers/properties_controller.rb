@@ -20,6 +20,7 @@ class PropertiesController < ApplicationController
   end
 
   def edit
+    @property.stations.build
   end
 
   def update
